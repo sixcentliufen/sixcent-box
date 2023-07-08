@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="apps-container">
+    <view class="app-box" wx:for="{{apps}}" wx:key="name" bind:tap="navigateTo" data-item="{{item}}">
+      {{item.name}}
+    </view>
+  </view>
+</view>
