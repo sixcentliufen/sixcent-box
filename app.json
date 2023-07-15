@@ -4,7 +4,8 @@
     "pages/snake/snake",
     "pages/lottery/lottery",
     "pages/chat/chat",
-    "pages/oneword/oneword"
+    "pages/oneword/oneword",
+    "pages/historytoday/historytoday"
   ],
   "window": {
     "backgroundTextStyle": "light",

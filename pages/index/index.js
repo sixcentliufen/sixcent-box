@@ -24,6 +24,10 @@ Page({
         name: '心灵鸡汤',
         url: '/pages/oneword/oneword'
       },
+      {
+        name: '历史上的今天',
+        url: '/pages/historytoday/historytoday'
+      },
     ]
     })
   },

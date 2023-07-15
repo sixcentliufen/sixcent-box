@@ -1,0 +1,11 @@
+<view>
+  今天是{{today}}
+</view>
+<view>
+<view>
+  历史上的今天：
+</view>
+  <view wx:for="{{historyList}}" wx:key="{{index}}">
+    {{item}}
+  </view>
+</view>

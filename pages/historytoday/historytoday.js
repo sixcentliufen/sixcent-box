@@ -1,52 +1,44 @@
-// pages/lottery/lottery.js
+// pages/historytoday/historytoday.js
+import {
+  request
+} from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    value: 0.5,
-    result:false
+    today: '',
+    historyList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getToday()
+    this.getHistory()
   },
-  lottery(probability) {
-    // 将概率乘以100并取整，转换为0到100的整数
-    const chance = Math.floor((probability - 0) * 100);
-
-    // 生成一个0到99的随机数
-
-    const randomNum = Math.floor(Math.random() * 100);
-
-    // 判断随机数是否小于等于概率
-    let res = false
-    if (randomNum <= chance) {
-      res =  true; // 抽中
-    } 
-    return res
+  getToday() {
+    let todayDate = new Date()
+    let year = todayDate.getFullYear()
+    let month = todayDate.getMonth() + 1
+    let date = todayDate.getDate()
+    let today = year + '年' + month + '月' + date + '日'
+    this.setData({
+      today
+    })
   },
-  handleTap() {
-    if(this.data.value < 0 ||this.data.value > 1){
-      wx.showToast({
-        title: '请填写0-1之间',
-        icon:'none'
+  async getHistory(){
+    const {data:{code,msg}} = await request({
+      method:'GET',
+      url:'http://apis.liaomengyun.top/API/history.php?num=20&method=json'
+    })
+    if(code == 200){
+      this.setData({
+        historyList:msg
       })
-      return
     }
-    let result = this.lottery(this.data.value)
-    this.setData({
-      result
-    })
-  },
-  bindInput(e){
-    this.setData({
-      value:e.detail.value
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,8 +1,9 @@
 <!--pages/chat/chat.wxml-->
-<view>开发中...</view>
+<view>开发中...注意不要提问太长</view>
+<view>目前是个脑子不太聪明的机器人</view>
 <text>输入问题</text>
 <input class="input" type="text" bindinput="handleInput" value="{{text}}"/>
-<button bindtap="submitChat">点击提问</button>
+<button bindtap="submitChat" disabled="{{disabled}}">点击提问</button>
 <text>AI回答</text>
 <view class="res-box">
   {{chatRes}}

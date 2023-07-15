@@ -14,6 +14,7 @@ Page({
     // accessToken: '',
     text: '',
     chatRes: '',
+    disabled:false
     // taskId: '',
     // requestId: ''
   },
@@ -28,6 +29,13 @@ Page({
   },
   // 提交提问内容
   submitChat() {
+    if (this.data.text.length === 0) {
+      wx.showToast({
+        title: '提问内容不能为空',
+        icon: 'none'
+      })
+      return
+    }
     this.getChatRes(this.data.text)
   },
   // 输入事件处理函数，绑定输入值
@@ -40,31 +48,46 @@ Page({
   async getChatRes(text) {
     console.log('text', text)
     // this.createTask()
-    const url = "http://apis.liaomengyun.top/API/qing_chat.php?msg="+ this.data.text
+    const url = "http://apis.liaomengyun.top/API/qing_chat.php?msg=" + this.data.text
     const method = "GET"
     // const data = {
-    //   "model": "gpt-3.5-turbo",
-    //   "prompt": this.data.text,
-    //   "max_tokens": 7,
-    //   "temperature": 0,
-    //   "top_p": 1,
-    //   "n": 1,
-    //   "stream": false
-    // }
-    // const header = {
-    //   "Authorization": 'Bearer ' +this.data.sk
-    // }
-    const {data:{code,msg}} = await request({
+      //   "model": "gpt-3.5-turbo",
+      //   "prompt": this.data.text,
+      //   "max_tokens": 7,
+      //   "temperature": 0,
+      //   "top_p": 1,
+      //   "n": 1,
+      //   "stream": false
+      // }
+      // const header = {
+        //   "Authorization": 'Bearer ' +this.data.sk
+        // }
+        wx.showLoading({
+          title: '思考中',
+        })
+        this.setData({
+          disabled:true
+        })
+        const {
+          data: {
+            code,
+            msg
+      }
+    } = await request({
       url,
       method,
       // data,
       // header
     })
-    if(code == 200){
+    if (code == 200) {
       this.setData({
-        chatRes:msg
+        chatRes: msg
       })
     }
+    wx.hideLoading()
+    this.setData({
+      disabled:false
+    })
   },
   // 获取token
   // async getChatToken() {

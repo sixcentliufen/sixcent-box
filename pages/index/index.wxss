@@ -2,12 +2,6 @@
 .container{
   width: 750rpx;
 }
-.apps-container{
-  margin: 0 auto;
-  width: 700rpx;
-  display: flex;
-  justify-content: space-around;
-}
 .bg-main{
   position: absolute;
   width: 750rpx;
@@ -15,10 +9,17 @@
   z-index: -1;
   opacity: .5;
 }
+.apps-container{
+  margin: 0 auto;
+  width: 700rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .app-box{
-  margin-top: 300rpx;
+  margin-top: 200rpx;
   border-radius: 50rpx;
-  width: 200rpx;
+  width: 220rpx;
   height: 100rpx;
   line-height: 100rpx;
   color: #fff;
