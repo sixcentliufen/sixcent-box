@@ -1,0 +1,5 @@
+<!--pages/oneword/oneword.wxml-->
+<button bindtap="getData" disabled="{{disabled}}">点击获取</button>
+<view>{{text}}</view>
+<view>作者:{{author}}</view>
+<view>来源:{{source}}</view>

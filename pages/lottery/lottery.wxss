@@ -1,0 +1,17 @@
+/* pages/lottery/lottery.wxss */
+.box{
+  /* border: 1rpx solid #fff; */
+  box-sizing: border-box;
+  display: flex;
+}
+.label{
+border: 1rpx solid #fff;
+}
+.input{
+  border: 1rpx solid #000;
+}
+.lottery-container{
+  width: 750rpx;
+  height: 100vh;
+  /* background-color: gray; */
+}

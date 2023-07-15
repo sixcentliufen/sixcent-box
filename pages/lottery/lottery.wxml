@@ -1,0 +1,27 @@
+<!--pages/lottery/lottery.wxml-->
+<view class="lottery-container">
+  <view class="probability-box box">
+  <view class="label">
+    输入你想控制的概率：
+  </view>
+  <view class="value">
+    <input type="text" class="input" bindinput="bindInput" value="{{value}}"/>
+  </view>
+</view>
+<view class="btn-box box">
+  <view class="label">
+    点击按钮抽奖
+  </view>
+  <view class="value">
+    <button bind:tap="handleTap">抽奖</button>
+  </view>
+</view>
+<view class="result-box box">
+  <view class="label">
+    你的抽奖结果为：
+  </view>
+  <view class="value">
+    {{result?'中奖了！':'没中奖'}}
+  </view>
+</view>
+</view>

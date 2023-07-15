@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/snake/snake"
+    "pages/snake/snake",
+    "pages/lottery/lottery",
+    "pages/chat/chat",
+    "pages/oneword/oneword"
   ],
   "window": {
     "backgroundTextStyle": "light",

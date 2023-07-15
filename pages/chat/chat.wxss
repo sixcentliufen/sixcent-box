@@ -1,0 +1,9 @@
+/* pages/chat/chat.wxss */
+.input{
+  border: 1rpx solid #000;
+}
+.res-box{
+  width: 100%;
+  height: 40rpx;
+  border:1rpx solid #000
+}

@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<image class="bg-main" src="../static/image/bg-main.jpg" mode=""/>
   <view class="apps-container">
     <view class="app-box" wx:for="{{apps}}" wx:key="name" bind:tap="navigateTo" data-item="{{item}}">
       {{item.name}}
