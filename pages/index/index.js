@@ -21,7 +21,7 @@ Page({
         url: '/pages/chat/chat'
       },
       {
-        name: '一句话',
+        name: '心灵鸡汤',
         url: '/pages/oneword/oneword'
       },
     ]
