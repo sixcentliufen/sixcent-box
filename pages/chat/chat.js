@@ -40,8 +40,7 @@ Page({
   async getChatRes(text) {
     console.log('text', text)
     // this.createTask()
-    const url = "https://api.wrdan.com/hitokoto"
-    // const url = "https://api.ohmygpt.com/v1/completions"
+    const url = "http://apis.liaomengyun.top/API/qing_chat.php?msg="+ this.data.text
     const method = "GET"
     // const data = {
     //   "model": "gpt-3.5-turbo",
@@ -55,13 +54,17 @@ Page({
     // const header = {
     //   "Authorization": 'Bearer ' +this.data.sk
     // }
-    const res = await request({
+    const {data:{code,msg}} = await request({
       url,
       method,
       // data,
       // header
     })
-    console.log('res', res)
+    if(code == 200){
+      this.setData({
+        chatRes:msg
+      })
+    }
   },
   // 获取token
   // async getChatToken() {
