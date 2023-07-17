@@ -20,14 +20,14 @@ Page({
         name: 'AI问答',
         url: '/pages/chat/chat'
       },
-      {
-        name: '心灵鸡汤',
-        url: '/pages/oneword/oneword'
-      },
-      {
-        name: '历史上的今天',
-        url: '/pages/historytoday/historytoday'
-      },
+      // {
+      //   name: '心灵鸡汤',
+      //   url: '/pages/oneword/oneword'
+      // },
+      // {
+      //   name: '历史上的今天',
+      //   url: '/pages/historytoday/historytoday'
+      // },
     ]
     })
   },

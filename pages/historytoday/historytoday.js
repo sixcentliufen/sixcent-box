@@ -32,7 +32,7 @@ Page({
   async getHistory(){
     const {data:{code,msg}} = await request({
       method:'GET',
-      url:'http://apis.liaomengyun.top/API/history.php?num=20&method=json'
+      url:'https://apis.liaomengyun.top/API/history.php?num=10&method=json'
     })
     if(code == 200){
       this.setData({

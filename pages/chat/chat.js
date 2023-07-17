@@ -14,7 +14,8 @@ Page({
     // accessToken: '',
     text: '',
     chatRes: '',
-    disabled:false
+    disabled: false,
+    src: ''
     // taskId: '',
     // requestId: ''
   },
@@ -24,6 +25,14 @@ Page({
    */
   onLoad(options) {
     console.log('onload')
+    let src = 'https://c.binjie.fun/#/chat'
+    // const min = Math.ceil(1000000000000); // 最小值为 10^12
+    // const max = Math.floor(9999999999999); // 最大值为 10^13 - 1
+    // src = src + Math.floor(Math.random() * (max - min + 1) + min);
+    this.setData({
+      src
+    })
+
     // 获取token
     // this.getChatToken()
   },
@@ -48,30 +57,30 @@ Page({
   async getChatRes(text) {
     console.log('text', text)
     // this.createTask()
-    const url = "http://apis.liaomengyun.top/API/qing_chat.php?msg=" + this.data.text
+    const url = "https://apis.liaomengyun.top/API/qing_chat.php?msg=" + this.data.text
     const method = "GET"
     // const data = {
-      //   "model": "gpt-3.5-turbo",
-      //   "prompt": this.data.text,
-      //   "max_tokens": 7,
-      //   "temperature": 0,
-      //   "top_p": 1,
-      //   "n": 1,
-      //   "stream": false
-      // }
-      // const header = {
-        //   "Authorization": 'Bearer ' +this.data.sk
-        // }
-        wx.showLoading({
-          title: '思考中',
-        })
-        this.setData({
-          disabled:true
-        })
-        const {
-          data: {
-            code,
-            msg
+    //   "model": "gpt-3.5-turbo",
+    //   "prompt": this.data.text,
+    //   "max_tokens": 7,
+    //   "temperature": 0,
+    //   "top_p": 1,
+    //   "n": 1,
+    //   "stream": false
+    // }
+    // const header = {
+    //   "Authorization": 'Bearer ' +this.data.sk
+    // }
+    wx.showLoading({
+      title: '思考中',
+    })
+    this.setData({
+      disabled: true
+    })
+    const {
+      data: {
+        code,
+        msg
       }
     } = await request({
       url,
@@ -86,7 +95,7 @@ Page({
     }
     wx.hideLoading()
     this.setData({
-      disabled:false
+      disabled: false
     })
   },
   // 获取token
