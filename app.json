@@ -5,7 +5,8 @@
     "pages/lottery/lottery",
     "pages/chat/chat",
     "pages/oneword/oneword",
-    "pages/historytoday/historytoday"
+    "pages/historytoday/historytoday",
+    "pages/woodenfish/woodenfish"
   ],
   "window": {
     "backgroundTextStyle": "light",

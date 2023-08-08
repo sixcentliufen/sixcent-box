@@ -20,6 +20,10 @@ Page({
         name: 'AI问答',
         url: '/pages/chat/chat'
       },
+      {
+        name: '电子木鱼',
+        url: '/pages/woodenfish/woodenfish'
+      },
       // {
       //   name: '心灵鸡汤',
       //   url: '/pages/oneword/oneword'

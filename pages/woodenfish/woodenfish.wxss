@@ -1,0 +1,14 @@
+/* pages/woodenfish/woodenfish.wxss */
+.img-container{
+  width: 750rpx;
+}
+.img-container image{
+  width: 750rpx;
+  height: 750rpx;
+}
+.img-container-down image{
+  width: 750rpx;
+  height: 750rpx;
+  /* margin: 0 auto; */
+  opacity: .5;
+}

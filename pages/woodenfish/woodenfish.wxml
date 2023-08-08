@@ -1,0 +1,5 @@
+<!--pages/woodenfish/woodenfish.wxml-->
+<view class="{{isTaping?'img-container-down':'img-container'}}">
+  <image src="../static/image/woodenfish.png" mode="" bind:tap="onTap" bind:touchstart="tapStart" bind:touchend="tapEnd" hover-class="hoverStyle"/>
+  <!-- <view class="msg-box" style="{{msgStyle}}">{{msg}}</view> -->
+</view>
